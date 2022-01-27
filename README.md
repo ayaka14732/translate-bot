@@ -4,7 +4,7 @@ A Telegram bot that translates English messages to Danish and German.
 
 ## Run
 
-Set `api_token` and `project_id` in `config.json`.
+Set Telegram `api_token` and Google Translate `project_id` in `config.json`.
 
 Save Google Translate credential in `credential.json`.
 
