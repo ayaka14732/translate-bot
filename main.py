@@ -13,6 +13,8 @@ def load_config():
 
 API_TOKEN, PROJECT_ID = load_config()
 
+client = translate.TranslationServiceClient()
+
 def is_english(text: str):
     parent = f'projects/{PROJECT_ID}/locations/global'
     response = client.detect_language(request={
@@ -32,8 +34,6 @@ def translate_text(text: str, lang: str):
         'target_language_code': lang,
     })
     return response.translations[0].translated_text
-
-client = translate.TranslationServiceClient()
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
